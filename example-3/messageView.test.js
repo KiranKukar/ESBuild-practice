@@ -10,11 +10,16 @@ describe('MessageView', () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
 
     const view = new MessageView();
-
+    const inputEl = document.querySelector('#message-input');
+ 
     const buttonEl = document.querySelector('#show-message-button');
     buttonEl.click();
+    inputEl.value = 'llamas';
 
+    // const messageValue = (document.querySelector('#message')).textContent;
+    // console.log(messageValue);
     expect(document.querySelector('#message')).not.toBeNull();
+    //expect(document.querySelector('#message')).innerText.toEqual('llamas!');
   });
 
   it('clicks the hide button', () => {

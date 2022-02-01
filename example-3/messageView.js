@@ -11,13 +11,14 @@ class MessageView {
     this.hideButtonEl.addEventListener('click', () => {
        this.hideMessage();
     });
+    this.inputEl = document.querySelector('#message-input');
   }
 
   displayMessage() {
     this.message = document.createElement('div');
     this.message.id = 'message';
     // message = document.querySelector('#message');
-    this.message.innerText = 'hello again';
+    this.message.innerText = this.inputEl.value;
     this.mainContainerEL.append(this.message);
 
     console.log('Thanks for clicking me!');
